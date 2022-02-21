@@ -5,8 +5,7 @@
 // Simplified Heater PWM - just connect SSR to HEAT_RELAY_PIN
 //
 
-#define HEAT_RELAY_PIN D5 // D5 + GND are close on NodeMCU
-
+#define HEAT_RELAY_PIN 23 // 23 + GND are close on the ESP23 DEV Board
 float heatcycles; // the number of millis out of 1000 for the current heat amount (percent * 10)
 
 boolean heaterState = 0;

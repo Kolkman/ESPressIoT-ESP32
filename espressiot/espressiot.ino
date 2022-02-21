@@ -85,7 +85,16 @@ void setup()
   gOutputPwr = 0;
 
   Serial.begin(115200);
-
+  // Need to print something to get the serial monitor setled
+  for (int i = 0; i < 5 ; i++){
+    Serial.print("Initializing (");
+    Serial.print(i);
+    Serial.println(")");
+    delay(100);
+  }
+  
+  
+  
   Serial.println("Mounting SPIFFS...");
   if (!prepareFS()) {
     Serial.println("Failed to mount SPIFFS !");
@@ -134,7 +143,7 @@ void setup()
   
 
 #ifdef ENABLE_TELNET
-  //setupTelnet();
+  setupTelnet();
 #endif
 
 #ifdef ENABLE_HTTP
@@ -213,7 +222,7 @@ void loop() {
 #endif
 
 #ifdef ENABLE_TELNET
-    //loopTelnet();
+    loopTelnet();
 #endif
 
 #ifdef ENABLE_SERIAL

@@ -7,8 +7,6 @@
 
 #ifdef ENABLE_TELNET
 
-#include <ESP8266WiFi.h>
-
 WiFiServer telnetServer(23);
 WiFiClient telnetClient;
 

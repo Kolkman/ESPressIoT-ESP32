@@ -20,9 +20,9 @@ char buf_msg[50];
 WiFiClient espClient;
 PubSubClient client(espClient);
 
-#define concat(first, second) first second
-const char *mqttConfigTopic = concat(MQTT_TOPIC, "/config/#");
-const char *mqttStatusTopic = concat(MQTT_TOPIC, "/status");
+#define stringconcat(first, second) first second
+const char *mqttConfigTopic = stringconcat(MQTT_TOPIC, "/config/#");
+const char *mqttStatusTopic = stringconcat(MQTT_TOPIC, "/status");
 
 
 void MQTT_reconnect() {
@@ -36,7 +36,7 @@ void MQTT_reconnect() {
       client.subscribe(mqttConfigTopic, 1);
     } else {
       Serial.print("failed, rc=");
-      Serial.print(client.state());
+      Serial.println(client.state());
     }
   }
 }

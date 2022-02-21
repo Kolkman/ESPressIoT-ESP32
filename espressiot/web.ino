@@ -7,11 +7,11 @@
 
 #ifdef ENABLE_HTTP
 
-#include <ESP8266WebServer.h>
-#include <ESP8266HTTPUpdateServer.h>
+#include <WebServer.h>
+#include <HTTPUpdateServer.h>
 
-ESP8266WebServer server(80);
-ESP8266HTTPUpdateServer httpUpdater;
+WebServer server(80);
+HTTPUpdateServer httpUpdater;
 
 void handleNotFound() {
   String message = "File Not Found\n\n";

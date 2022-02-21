@@ -3,14 +3,14 @@
 # ESPressIoT-ESP32
 
 This project is a fork of the original ESPressIoT project by Roman
-Schmit orignially written for an  ESP3866 board with a TSIC
+Schmit originally written for an  ESP3866 board with a TSIC
 sensor. This fork ports that code to an ESP32 with a MAX31855
 amplified K thermocouple.
 
 
 The project covers somewhat advances features for an espresso machine
 controller. The basic idea was to have reproducible "espresso results"
-due to temperature regulation and being able to fine-tune. Especialy
+due to temperature regulation and being able to fine-tune. Especially
 small machines have a low heat capacity and quality suffers a lot from
 different heat-up-times and high hysteresis in standard temperature
 switches.
@@ -44,6 +44,33 @@ sensors, SSR etc.) wisely...
 * JSON-Config in internal SPIFFS (uses [ArduinoJSON][2])
 * Re-Written auto-tuning-loop to optimize PID parameters
 * integrated simulation to test features and functionality
+
+
+## Hardware setup
+
+
+For the hardware setup I followed the example from [Bnayalivne's
+Instructable](https://www.instructables.com/PID-Controlled-Thermostat-Using-ESP32-Applied-to-a/
+"Bnayalivne's Instructable page") page. I used[ a
+splitter](images/Splitter.jpg "image showing the splitter") to solder
+a USB charger to. And the whole circuit I installed in the space
+behind the frontplate, in a [small mayonnaise
+container](images/ERP32-in-plastic-box.jpg)o keep it dry from the drip
+plate.
+
+Whilst the Fotek should be able to handle the 3.3 V output from the
+GPIO it failed doing so. The small circuit with the transistor, resistor, and the
+diode (against flowback) uses the GPIO defined in heater.ino  to switch the 5V output.
+ 
+![PID in Action](images/Espresso IoT Pid_scheme.png)
+
+
+Finally, here is a graph of the PID kicking into action.
+
+![PID in Action](images/PID-in-Action.png)
+
+
+
 
 [1]: https://github.com/br3ttb/Arduino-PID-Library
 [2]: https://github.com/bblanchon/ArduinoJson 

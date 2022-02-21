@@ -36,13 +36,13 @@
 //
 // STANDARD reset values based on Gaggia CC
 //
-#define S_P 139.16
-#define S_I 249.01
-#define S_D 19.44
+#define S_P 287.11
+#define S_I 579.10
+#define S_D 800.00
 #define S_aP 100.0
 #define S_aI 0.0
 #define S_aD 0.0
-#define S_TSET 99.5
+#define S_TSET 95.5
 #define S_TBAND 1.5
 
 //
@@ -50,7 +50,7 @@
 //
 #define HEATER_INTERVAL 1000
 #define DISPLAY_INTERVAL 1000
-#define PID_INTERVAL 200
+#define PID_INTERVAL 100
 
 //
 // global variables

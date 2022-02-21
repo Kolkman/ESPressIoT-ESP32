@@ -26,11 +26,11 @@ Target Temperature:
 98.5
 
 Threshold for adaptive PID:
-1.50
+
 
 normal PID:
 P/I/D
-139.16/249.01/19.44
+287.11/579.20/800.0
 
 adaptive PID:
 P/I/D

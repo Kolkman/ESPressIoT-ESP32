@@ -62,7 +62,8 @@ Whilst the Fotek should be able to handle the 3.3 V output from the
 GPIO it failed doing so. The small circuit with the transistor, resistor, and the
 diode (against flowback) uses the GPIO defined in heater.ino  to switch the 5V output.
  
-![PID in Action](images/Espresso IoT Pid_scheme.png)
+![PID in Action](images/Espresso_IoT_Pid_scheme.png)
+
 
 
 Finally, here is a graph of the PID kicking into action.

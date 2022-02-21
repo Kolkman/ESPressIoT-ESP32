@@ -8,5 +8,6 @@
 #define MQTT_PORT 1883
 #define MQTT_USER "EspressIoT"
 #define MQTT_PASS "Password!"
+#define MQTT_TOPIC "EspressoIoT"
 
 #endif

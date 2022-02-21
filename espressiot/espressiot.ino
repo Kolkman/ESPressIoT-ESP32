@@ -36,13 +36,13 @@
 //
 // STANDARD reset values based on Gaggia CC
 //
-#define S_P 115.0
-#define S_I 4.0
-#define S_D 850.0
+#define S_P 139.16
+#define S_I 249.01
+#define S_D 19.44
 #define S_aP 100.0
 #define S_aI 0.0
 #define S_aD 0.0
-#define S_TSET 96.5
+#define S_TSET 99.5
 #define S_TBAND 1.5
 
 //

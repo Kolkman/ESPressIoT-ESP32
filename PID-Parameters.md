@@ -20,6 +20,23 @@ adaptive PID:
 P/I/D
 100.00/0.00/0.00
 
+## Rancilio Silvia V1
+
+Target Temperature:
+98.5
+
+Threshold for adaptive PID:
+1.50
+
+normal PID:
+P/I/D
+139.16/249.01/19.44
+
+adaptive PID:
+P/I/D
+100.00/0.00/0.00
+
+
 ## Rancilio Silvia V3
 
 Target Temperature:

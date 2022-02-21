@@ -7,7 +7,7 @@
 
 #ifndef SIMULATION_MODE
 #include <SPI.h>
-#include "Adafruit_MAX31855.h"
+#include <Adafruit_MAX31855.h>
 
 
 #define ACCURACY 0.3

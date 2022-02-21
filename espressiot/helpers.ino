@@ -1,4 +1,3 @@
-//
 // ESPressIoT Controller for Espresso Machines
 // 2016-2021 by Roman Schmitz
 //
@@ -29,7 +28,7 @@ String statusAsJson() {
   String outputString;
 
   statusObject["time"] = time_now;
-  statusObject["mesauredTemperature"] = gInputTemp;
+  statusObject["measuredTemperature"] = gInputTemp;
   statusObject["targetTemperature"] = gTargetTemp;
   statusObject["heaterPower"] = gOutputPwr;
   statusObject["externalControlMode"] = externalControlMode;

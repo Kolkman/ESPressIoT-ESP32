@@ -1,3 +1,6 @@
+#include <WiFi.h>
+
+
 #include <ArduinoJson.h>
 
 //
@@ -8,7 +11,7 @@
 //
 
 #include <PID_v1.h>
-#include <ESP8266WiFi.h>
+
 
 // WIFI
 //
@@ -22,12 +25,13 @@
 #define ENABLE_HTTP
 #define ENABLE_TELNET
 #define ENABLE_MQTT
+#define ENABLE_SERIAL
 
 // enable detectio of an external switch/thermostat
 //#define ENABLE_SWITCH_DETECTION
 
 // use simulation or real heater and sensors
-#define SIMULATION_MODE
+//#define SIMULATION_MODE
 
 //
 // STANDARD reset values based on Gaggia CC
@@ -102,7 +106,6 @@ void setup()
   }
 
   Serial.println("Settin up PID...");
-
   WiFi.begin(WIFI_SSID, WIFI_PASS);
   WiFi.macAddress(mac);
   Serial.println("");
@@ -125,9 +128,13 @@ void setup()
   Serial.println("WiFi connected.");
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
+   delay(2);
+    Serial.println("something");
+
+  
 
 #ifdef ENABLE_TELNET
-  setupTelnet();
+  //setupTelnet();
 #endif
 
 #ifdef ENABLE_HTTP
@@ -163,15 +170,15 @@ void serialStatus() {
 
 void loop() {
   time_now = millis();
-
   updateTempSensor();
   gInputTemp = getTemp();
+  Serial.println(gInputTemp);
 
 #ifdef ENABLE_SWITCH_DETECTION
   loopSwitch();
 #endif
 
-  if (abs(time_now - time_last) >= PID_INTERVAL or time_last > time_now) {
+  if ( (max(time_now, time_last) - min(time_now, time_last)) >= PID_INTERVAL or time_last > time_now) {
     if (poweroffMode == true) {
       gOutputPwr = 0;
       setHeatPowerPercentage(gOutputPwr);
@@ -206,7 +213,7 @@ void loop() {
 #endif
 
 #ifdef ENABLE_TELNET
-    loopTelnet();
+    //loopTelnet();
 #endif
 
 #ifdef ENABLE_SERIAL

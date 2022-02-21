@@ -9,7 +9,7 @@
 
 #include <ArduinoJson.h>
 #include <StreamUtils.h>
-#include "FS.h"
+#include <SPIFFS.h>
 
 #define BUF_SIZE 1024
 

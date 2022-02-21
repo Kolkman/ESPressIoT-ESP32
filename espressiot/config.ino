@@ -9,12 +9,14 @@
 
 #include <ArduinoJson.h>
 #include <StreamUtils.h>
+#include <FS.h>
 #include <SPIFFS.h>
+#define FORMAT_SPIFFS_IF_FAILED true
 
 #define BUF_SIZE 1024
 
 bool prepareFS() {
-  if (!SPIFFS.begin()) {
+  if (!SPIFFS.begin(FORMAT_SPIFFS_IF_FAILED)) {
     Serial.println("Failed to mount file system");
     return false;
   }
